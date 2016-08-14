@@ -1,14 +1,9 @@
-import { bootstrap } from '@angular/platform-browser-dynamic';
-import { enableProdMode } from '@angular/core';
+import { browserDynamicPlatform } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app.module';
 
-import { AppComponent } from './app.component';
-import { APP_ROUTER_PROVIDERS } from './app.routes';
-
-// Extend Observable through the app
+// // Extend Observable through the app
 import 'rxjs/Rx';
 
-//enableProdMode();
-
-bootstrap(AppComponent, [
-    APP_ROUTER_PROVIDERS
-]).catch(console.error.bind(console));
+browserDynamicPlatform()
+    .bootstrapModule(AppModule)
+    .catch(console.error.bind(console));
